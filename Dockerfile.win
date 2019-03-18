@@ -1,0 +1,10 @@
+FROM golang:windowsservercore-1803
+COPY ["/catweb.go", "c:/gopath/catweb.go"]
+RUN ["go", "build /gopath/catweb.go"]
+
+FROM mcr.microsoft.com/windows/nanoserver:1803
+COPY --from=0 ["c:/gopath/catweb.exe", "c:/"]
+COPY ["/templates/index.html", "c:/"]
+COPY ["/static/*",  "c:/static/"]
+EXPOSE 8080
+CMD /catweb.exe

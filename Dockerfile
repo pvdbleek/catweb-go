@@ -4,7 +4,7 @@ RUN go build catweb.go
 
 FROM alpine:latest
 COPY --from=0 /go/catweb /
-COPY index.html /
+COPY templates/index.html /
 COPY static/* /static/
 EXPOSE 8080
 CMD /catweb

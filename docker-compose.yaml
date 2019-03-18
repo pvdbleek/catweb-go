@@ -2,10 +2,10 @@ version: '3.2'
 
 services:
 
-  catweb-go:
-    image: dtr.pvdbleek.dtcntr.net/pvdbleek/catweb-go:latest
+  nogcatweb-go:
+    image: dtr.pvdbleek.dtcntr.net/prod/catweb-go:latest
     ports:
-      - 8080
+      - 8080:8080
     deploy:
       replicas: 6
       labels:
