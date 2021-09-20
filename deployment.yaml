@@ -1,4 +1,4 @@
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: catweb-go
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: catweb
-        image: dtr.pvdbleek.dtcntr.net/pvdbleek/catweb-go:latest
+        image: pvdbleek/catweb
         ports:
         - containerPort: 8080
 ---
@@ -28,6 +28,6 @@ spec:
   type: NodePort
   ports:
     - port: 8080
-      nodePort: 33080
+      nodePort: 32090
   selector:
     app: catweb
