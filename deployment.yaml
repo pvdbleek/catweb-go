@@ -28,6 +28,6 @@ spec:
   type: NodePort
   ports:
     - port: 8080
-      nodePort: 32090
+      nodePort: 32080
   selector:
     app: catweb
