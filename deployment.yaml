@@ -15,6 +15,7 @@ spec:
       containers:
       - name: catweb
         image: pvdbleek/catweb-go
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
 ---
