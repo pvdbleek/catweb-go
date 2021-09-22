@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: catweb
-  replicas: 6
+  replicas: 1
   template:
     metadata:
       labels:
