@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: catweb
+spec:
+  selector:
+    matchLabels:
+      app: catweb
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: catweb
+    spec:
+      containers:
+      - name: catweb
+        image: pvdbleek/catweb-go
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
