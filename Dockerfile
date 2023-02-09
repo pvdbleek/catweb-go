@@ -1,5 +1,5 @@
 FROM golang:1.8-alpine
-COPY catweb.go /go
+COPY src/catweb.go /go
 RUN go build catweb.go
 
 FROM alpine:latest
